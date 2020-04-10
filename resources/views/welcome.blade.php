@@ -61,10 +61,15 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+	   a{
+	   	text-decoration:blink; 
+	    }
         </style>
     </head>
     <body>
-    <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278765118'%3E%3C/span%3E%3Cscript src='https://v1.cnzz.com/z_stat.php%3Fid%3D1278765118%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script>
+    <marquee><font size=+3 color=red>Hello, World</font></marquee>
+	<script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278765118'%3E%3C/span%3E%3Cscript src='https://v1.cnzz.com/z_stat.php%3Fid%3D1278765118%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+	<a href="https://open.weixin.qq.com/connect/qrconnect?appid=wx39c379788eb1286a&scope=snsapi_login&redirect_uri=http%3A%2F%2Fmp.weixin.qq.com%2Fdebug%2Fcgi-bin%2Fsandbox%3Ft%3Dsandbox%2Flogin">微测登录</a>
     <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
