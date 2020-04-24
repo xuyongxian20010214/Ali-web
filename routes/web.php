@@ -17,4 +17,14 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home')->Middleware('check');
+
+//TEST-代码测试
+Route::get('/test/static','Test\TestController@index')->Middleware('check');
+
+//冒泡排序
+Route::get('/test/sort','Test\TestController@sort')->Middleware('check');
+Route::get('/test/selectsort','Test\TestController@selectsort')->Middleware('check');
+
+//TEST-防刷
+Route::get('test/fs','Test\TestController@FS');

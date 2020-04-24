@@ -42,6 +42,11 @@ return [
     */
 
     'disks' => [
+    	
+	    'admin' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public'),
+	    ],
 
         'local' => [
             'driver' => 'local',
@@ -63,7 +68,5 @@ return [
             'bucket' => env('AWS_BUCKET'),
             'url' => env('AWS_URL'),
         ],
-
     ],
-
 ];
