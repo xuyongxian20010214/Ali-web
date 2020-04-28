@@ -27,4 +27,21 @@ Route::get('/test/sort','Test\TestController@sort')->Middleware('check');
 Route::get('/test/selectsort','Test\TestController@selectsort')->Middleware('check');
 
 //TEST-防刷
-Route::get('test/fs','Test\TestController@FS');
+Route::get('/test/fs','Test\TestController@FS');
+
+//文件上传
+Route::any('/upload/file','Test\TestController@uploadFile');
+
+//微信
+Route::get('/weixin/valid','Weixin\WxController@checkSignature');
+
+//获取access_token
+Route::get('/weixin/token','Weixin\WxController@AccessToken');
+//获取用户信息
+Route::get('/weixin/userinfo/{openid}','Weixin\WxController@getUserInfo');
+//创建用户标签
+Route::get('/weixin/tags','Weixin\WxController@getUserTags');
+
+
+
+

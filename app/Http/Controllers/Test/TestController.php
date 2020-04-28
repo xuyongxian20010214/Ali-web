@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\URL;
-use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Mail;
 class TestController extends Controller
 {
     //TEST  -测试
@@ -89,5 +90,31 @@ class TestController extends Controller
             Redis::expire($redis_key,10);
             echo json_encode($response,JSON_UNESCAPED_UNICODE);die;
         }
+    }
+
+    /**
+     * 文件上传
+     * @param Request $request
+     */
+    public function uploadFile(Request $request)
+    {
+       if($request->isMethod('POST')){
+          $file = $request->file('file');
+          if($file->isValid()){
+              $orgin = $file->getClientOriginalName();
+              $ext = $file->getClientOriginalExtension();
+              $type = $file->getClientMimeType();
+              $file_path = $file->getRealPath();
+
+              $filename = date('Y-m-d H:i:s').'-'.uniqid().'.'.$ext;
+              $bool =Storage::disk('uploads')->put($filename,file_get_contents($file_path));
+              echo '恭喜xxx上传文件成功';
+	      header("Refresh:1;url=/");
+          }
+           exit;
+       }
+        return view('uploads.file');
+
+
     }
 }

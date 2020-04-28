@@ -4,18 +4,15 @@ namespace App\Admin\Controllers;
 
 use App\User;
 use Encore\Admin\Controllers\AdminController;
-use Encore\Admin\Form;
-use Encore\Admin\Grid;
-use Encore\Admin\Show;
 
-class UserController extends AdminController
+class UploadController extends AdminController
 {
     /**
      * Title for current resource.
      *
      * @var string
      */
-    protected $title = '用户管理';
+    protected $title = 'App\User';
 
     /**
      * Make a grid builder.

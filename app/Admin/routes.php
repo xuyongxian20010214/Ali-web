@@ -11,5 +11,8 @@ Route::group([
 ], function (Router $router) {
 
     $router->get('/', 'HomeController@index')->name('admin.home');
+    //用户管理
     $router->resource('/demo/users/', UserController::class);
+    //文件上传管理
+    $router->resource('/upload/file/', UploadController::class);
 });
