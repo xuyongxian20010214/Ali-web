@@ -36,12 +36,13 @@ Route::any('/upload/file','Test\TestController@uploadFile');
 Route::get('/weixin/valid','Weixin\WxController@checkSignature');
 
 //获取access_token
-Route::get('/weixin/token','Weixin\WxController@AccessToken');
+Route::get('/weixin/token','Weixin\WxController@getAccessToken');
 //获取用户信息
 Route::get('/weixin/userinfo/{openid}','Weixin\WxController@getUserInfo');
-//创建用户标签
+//获取用户标签
 Route::get('/weixin/tags','Weixin\WxController@getUserTags');
-
+//创建用户标签
+Route::get('/weixin/create_tag','Weixin\WxController@createWxTags');
 
 
 
